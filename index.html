@@ -119,7 +119,7 @@
     		
     		<span class="float-right-text">我要<br/>抽奖</span>
     	</div>
-    	<div class="vote-btn-vote vote-btn-div">
+    	<div class="vote-btn-vote vote-btn-div" data-toggle="model" data-target="#voteModal">
     		<i class="iconfont-img">&#xe678;</i>
     		<span class="float-right-text">投票</span>
     	</div>
@@ -211,6 +211,8 @@
         		'</li>';
         		$(".comment-box").append(li);
         })
+         // 投票modal
+         $('#vote-btn-vote').modal()
     </script>
 </body>
 </html>
