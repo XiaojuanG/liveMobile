@@ -28,6 +28,12 @@ $(function () {
         }
        
     });	
+	//对话窗口隐藏显示
+	//console.log($('.WX_navbar').find('div:first-child'));
+	// if ($('.WX_navbar').find('div:first-child').is('.navbar-item_on')) {
+	// 	 $('.publish-box ').removeClass('index-display')
+	// }
+	
 	//表情
     $('.iconfont-emotion').on("click", function(){
          $('.model').addClass('model-css');
@@ -37,20 +43,44 @@ $(function () {
 		$('.model').removeClass('model-css')
 	});
 	// 投票
-	$('.vote-btn-vote').on('click', function() {
-		var titleHtml =""
-		layer.open({
-			content:'ghgjjbjk',
-			title:['','background-color: #f4f6f8;text-align:left;'],
-			btn:'投票',
-			shade:false,
-			fixed:false,
-			top:-140,
-
-		})
+	// $('.vote-btn-vote').on('click', function() {
+	// 	alert(123);
+		
+	// });
+	//文档
+	$('.btn-file').on('click', function() {
+		$('.docs-show-box').removeClass('index-display');
+	});
+	$('.closeicon').on('click', function() {
+		$('.docs-show-box').addClass('index-display');
+	});
+	//投票
+	$('.vote-img-close').on('click', function() {
+		 $('#vote-wrap-img').addClass('index-display')
+	});
+	$('.vote-box-close').on('click', function() {
+		$('#vote-wrap-text').addClass('index-display')
+	});
+	$('.btn-vote').on('click', function() {
+		if ($('#vote-wrap-text').is('.index-display')) {
+			$('#vote-wrap-text').removeClass('index-display')
+		}else{
+			$('#vote-wrap-text').addClass('index-display')
+		}
+		if ($('#vote-wrap-img').is('.index-display')) {
+			$('#vote-wrap-img').removeClass('index-display')
+		}
 		
 	});
-	
+	//打赏
+	  $('.icon-reward').on('click', function() {
+        $('#reward-wrap').removeClass('index-display');
+    });
+	$('#reward-pay-close').on('click', function() {
+		$('#reward-wrap').css(
+            "display",'none'
+        );
+	});
 	
 		
 })

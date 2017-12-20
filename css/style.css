@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 499408 */
-  src: url('//at.alicdn.com/t/font_499408_vno9tdmqrqf47vi.eot');
-  src: url('//at.alicdn.com/t/font_499408_vno9tdmqrqf47vi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_499408_vno9tdmqrqf47vi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_499408_vno9tdmqrqf47vi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_499408_vno9tdmqrqf47vi.svg#iconfont') format('svg');
+  src: url('http://at.alicdn.com/t/font_499408_5fakwjs0tl0udi.eot');
+  src: url('http://at.alicdn.com/t/font_499408_5fakwjs0tl0udi.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_499408_5fakwjs0tl0udi.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_499408_5fakwjs0tl0udi.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_499408_5fakwjs0tl0udi.svg#iconfont') format('svg');
 }
 *{
 	margin: 0;
@@ -279,4 +279,442 @@ span{
 /*表情框*/
 .model-css{
 	height: 15rem;
+}
+/*文档*/
+.docs-show-box{
+	height: 50rem;
+	width: 42rem;
+	position: absolute;
+	top: -34rem;
+	left:-36rem;
+	background-color: #f8f8f8;
+}
+.closeicon{
+	position: absolute;
+	display: inline-block;
+	z-index: 2;
+	top: 0.6rem;
+	right: 0.8rem;
+	
+    text-align: center;
+    
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.iconfont-close-file{
+	font-family:"iconfont" !important;
+	font-size:2.8rem;
+	font-style:normal;
+    background-color: rgba(0, 0, 0, 0.35);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+}
+/*投票*/
+.mb-vote-wrap{
+	height: 50rem;
+	width: 42rem;
+	position: absolute;
+    top: -24rem;
+	left:-36rem;
+    z-index: 2;
+    background-color: #fff;
+}
+.vote-box-close{
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    z-index: 2;
+    border-top: 5rem solid #ebecee;
+    border-left: 5rem solid transparent;
+}
+.btn-close-vote{
+	position: absolute;
+	right: 0.5rem;
+	    top: -4.5rem;
+	font-family:"iconfont" !important;
+	font-size:2rem;
+	font-style:normal;
+	color: #fff;
+}
+.vote-radio{
+	    padding-bottom: 42px;
+    height: 100%;
+    max-height: 526px;
+    -webkit-overflow-scrolling: touch;
+}
+.vote-title{
+	overflow: hidden;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    color: #2a2a2a;
+    border-bottom: 1px solid #f3f3f3;
+    background-color: #f4f6f8;
+}
+.vote-item{
+	position: relative;
+    border-bottom: 1px solid #f3f3f3;
+}
+.vote-name{
+    text-align: left;
+    text-indent: 1em;
+	position: relative;
+    line-height: 5rem;
+    font-size: 1.5rem;
+    color: #353535;
+}
+.vote-button{
+	color: #ccc;
+    background-color: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4.2rem;
+    line-height: 4.2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: pointer;
+    /*background-color: #3c8cd2;*/
+}
+.vote-img-title{
+	position: absolute;
+    z-index: 2;
+    width: 100%;
+    padding-right: 4rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    background: #1fa1ff;
+    background: -webkit-gradient(linear, left top, right top, from(#1fa1ff), to(#6085e1));
+    background: -webkit-linear-gradient(left, #1fa1ff, #6085e1);
+    background: -moz-linear-gradient(left, #1fa1ff, #6085e1);
+    background: linear-gradient(to right, #1fa1ff, #6085e1);
+}
+.vote-img-title-text{
+	font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #fff;
+}
+.vote-img-close{
+	position: absolute;
+    z-index: 3;
+    right:6rem;
+    top: 1rem;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.anticon-close{
+	font-family:"iconfont" !important;
+	cursor: pointer;
+	font-style:normal;
+	font-size: 2rem;
+}
+.vote-select-group-warp{
+	padding-top: 5rem;
+}
+.vote-select-item{
+	display: inline-block;
+    margin-bottom: 10px;
+    width: 40%;
+    height: 13rem;
+}
+.nth-odd{
+	padding-left: 10px;
+    padding-right: 5px;
+}
+.nth-even{
+	padding-left: 5px;
+    padding-right: 10px;
+}
+.vote-selection-item-content{
+	position: relative;
+    width: 100%;
+    height: 100%;
+}
+.vote-select-img-wrap{
+	position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+
+
+}
+.vote-select-bottom-wrap{
+	position: absolute;
+    bottom: 0;
+    height: 3rem;
+    width: 100%;
+    line-height: 3rem;
+}
+.vote-num-wrap{
+	display: inline-block;
+    padding-left: 6px;
+    font-size: 1.2rem;
+    color: #666;
+}
+.vote-btn-wrap{
+	display: inline-block;
+    width: 40%;
+    padding-right: 4px;
+    text-align: right;
+}
+.img-vote-btn{
+	    padding: 0 5px;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 0;
+    outline: 0;
+    background-color: #1fa1ff;
+    background-image: -webkit-gradient(linear, right top, left top, from(#1fa1ff), to(#6085e1));
+    background-image: -webkit-linear-gradient(right, #1fa1ff, #6085e1);
+    background-image: -moz-linear-gradient(right, #1fa1ff, #6085e1);
+    background-image: linear-gradient(to left, #1fa1ff, #6085e1);
+    -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.select-img-wrap{
+	width: 100%;
+    height: 100%;
+}
+.select-name{
+	position: absolute;
+    bottom: 32px;
+    width: 100%;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    background: rgba(0, 0, 0, 0.2);
+}
+.select-img{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*打赏*/
+.reward-wrap{
+	height: 50rem;
+	width: 42rem;
+    position: absolute;
+    left: -36rem;
+    top: -30rem;
+    background-color: #fff;
+	font-size: 0;
+	padding-top: 25px;
+	z-index: 1;
+}
+#reward-pay-close{
+	position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    z-index: 2;
+    cursor: pointer;
+    border-top: 4.8rem solid #ebecee;
+    border-left: 4.8rem solid transparent;
+}
+.reward-icon{
+	font-family: "iconfont" !important;
+    cursor: pointer;
+    font-style: normal;
+    font-size: 1.6rem;
+	} 
+.closeicon{
+	position: absolute;
+    z-index: 99;
+    margin-top: -4.5rem;
+    right: 0.8rem;
+    color: #5b5b5b;
+    font-size: 1.4rem;
+}
+.cash-banner{
+	position: relative;
+    padding-bottom: 20%;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    font-size: 2rem;
+    color: #22292c;
+}
+.cash-banner span{
+	    position: absolute;
+    display: inline-block;
+    width: 100%;
+    top: 50%;
+    margin-top: -12px;
+    margin-top: -1rem;
+    left: 0;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+}
+.cash-price-wrap{
+	    position: relative;
+    background-color: #F8F8F8;
+    padding: 1.4rem 1.5rem;
+}
+.p-price{
+	position: relative;
+    height: 3rem;
+    line-height: 3rem;
+}
+.cash-price-wrap .label{
+	float: left;
+	display: inline-block;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #A0A0A0;
+}
+.cash-price-wrap input.money{
+	width: 6.5rem;
+}
+.cash-price-wrap input{
+	float: left;
+	padding: 0 0 0 .5rem;
+    height: 3rem;
+    border: solid 1px #B3B6B8;
+    font-size: 1.1rem;
+    
+    line-height: 3rem;
+    
+}
+.cash-price-wrap .pay-btn{
+	float: right;
+	    display: inline-block;
+    margin-left: 10px;
+    vertical-align: top;
+    padding: 0 10px;
+   height: 3rem;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    border-radius: .5rem;
+    background-color: #F08700;
+    color: #fff;
+    font-size: 1.4rem;
+   line-height: 3rem;
+    text-align: center;
+}
+.cash-rank-box{
+	    position: relative;
+    width: 100%;
+}
+.cash-rank-title{
+	    padding: .8rem 1.5rem;
+    border-bottom: solid 1px #DDDDDD;
+    font-size: 1.1rem;
+    color: #A0A0A0;
+}
+.num{
+	    font-style: normal;
+    color: #141414;
+}
+#userNum{
+    font-size: 1.33rem;
+    font-weight: bold;
+    
+}
+.title-left{
+	position: relative;
+    left: -16rem;
+}
+.title-right{
+	    position: absolute;
+	    top: 15px;
+    right: 18px;
+    right: 1.5rem;
+}
+.cash-rank-content{
+	height: 166.63px
+	position: relative;
+    padding: 0 18px;
+    overflow-y: auto;
+}
+.reward-layer-shade{
+	height: 50rem;
+	width: 42rem;
+    position: absolute;
+    bottom: -16rem;
+    right: -2rem;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 2;
+}
+.layer-box{
+	width: 360px;
+	height: 280px;
+	position: absolute;
+    right: -130px;
+    top: -372px;
+    z-index: 2;
+    
+}
+.verifycode-wrap{
+	text-align: center;
+	background-color: #f2f2f2;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+}
+.verifycode-wrap .title{
+	top: 50%;
+    left: 50%;
+    height: 53px;
+    line-height: 50px;
+    border-bottom: 1px solid #E6E6E6;
+    color: #040405;
+    font-size: 18px;
+
+}
+.close-icon{
+	position: absolute;
+	right: 10px;
+	color: #999;
+}
+.qr-img-div{
+	padding: 20px 0;
+}
+.index-display{
+	display: none;
 }

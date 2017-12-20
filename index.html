@@ -95,7 +95,7 @@
                     </div>
                 </div>
     </div>
-    <div class="publish-box">
+    <div class="publish-box index-display">
     	<div id="publish-wrap">
     		<span class="mobile-emotion-span">
     			<i class="iconfont-emotion">&#xe600;</i>
@@ -115,25 +115,153 @@
     	<i class="iconfont-add-img">&#xe601;</i>
     </div>
     <div id="float-right" class="float-right-hidden">
-    	<div class="vote-btn-lottery vote-btn-div">
+    	<div class="vote-btn-lottery vote-btn-div index-display">
     		
     		<span class="float-right-text">我要<br/>抽奖</span>
     	</div>
     	<div class="vote-btn-vote vote-btn-div" data-toggle="model" data-target="#voteModal">
-    		<i class="iconfont-img">&#xe678;</i>
-    		<span class="float-right-text">投票</span>
+            <div class="btn-vote">
+        		<i class="iconfont-img">&#xe678;</i>
+        		<span class="float-right-text">投票</span>
+            </div>
+            <!-- 文字投票 -->
+            <div id="vote-wrap-text" class="mb-vote-wrap index-display">
+                <div class="vote-box-close">
+                    <i class="btn-close-vote">&#xe69a;</i>
+                </div>
+                <div class="vote-radio index-display" >
+                  <p class="vote-title">文字投票(单选)</p>
+                  <form name="vote-form">
+                    <ul>
+                      <li class="vote-item">
+                        <p class="vote-name">
+                          <input type="radio" name="vote-ques-1" class="radio-input">
+                          <label class="vote-text" for="">内容内容</label>
+                        </p>
+                      </li>
+                      <li class="vote-item">
+                        <p class="vote-name">
+                          <input type="radio" name="vote-ques-1" class="radio-input" >
+                          <label class="vote-text" for="">内容</label>
+                        </p>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+                <div class="vote-check index-display" >
+                  <p class="vote-title">文字投票(多选，最多选2项)</p>
+                  <form name="vote-form">
+                    <ul>
+                      <li class="vote-item">
+                        <p class="vote-name">
+                          <input type="checkbox" name="vote-ques-1" class="radio-input" >
+                          <label class="vote-text" for="">内容</label>
+                        </p>
+                      </li>
+                      <li class="vote-item">
+                        <p class="vote-name">
+                          <input type="checkbox" name="vote-ques-1" class="radio-input" >
+                          <label class="vote-text" for="">内容</label>
+                        </p>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+                <p class="vote-button">投票</p>
+            </div>
+            <!-- 图文投票 -->
+            <div id="vote-wrap-img" class="mb-vote-wrap index-display"  >
+              <div class="vote-img-title">
+                    <p class="vote-img-title-text">1/1(单选)图文投票单选</p>
+                    <div class="vote-img-close">
+                      <i class="anticon-close">&#xe617;</i>
+                    </div>
+              </div>
+            
+            <div class="vote-select-group-warp">
+              <div class="vote-select-item nth-odd">
+                <div class="vote-selection-item-content">
+                  <div class="vote-select-img-wrap">
+                    <div class="select-img-wrap">
+                      <img src="images/timg1.jpg" class="select-img" >
+                    </div>
+                    <p class="select-name">1</p>
+                  </div>
+                  <div class="vote-select-bottom-wrap">
+                    <div class="vote-num-wrap">0票</div>
+                    <div class="vote-btn-wrap">
+                      <button class="img-vote-btn">投票</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vote-select-item nth-even">
+                <div class="vote-selection-item-content">
+                    <div class="vote-select-img-wrap">
+                      <div class="select-img-wrap">
+                        <img src="images/timg1.jpg" class="select-img" >
+                      </div>
+                      <p class="select-name">1</p>
+                    </div>
+                    <div class="vote-select-bottom-wrap">
+                      <div class="vote-num-wrap">0票</div>
+                      <div class="vote-btn-wrap">
+                        <button class="img-vote-btn">投票</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+             
+            </div>
     	</div>
     	<div class="vote-btn-gratuity vote-btn-div">
+            <div class="icon-reward">
     		<i class="iconfont-img">&#xe678;</i>
     		<span class="float-right-text">打赏</span>
+            </div>
+            <!-- 现金打赏 -->
+            
+            <div class="reward-wrap index-display " id="reward-wrap">
+              <div id="reward-pay-close">
+                <i class="reward-icon closeicon">&#xe69a;</i>
+              </div>
+              
+              <div class="cash-banner">
+                    <span>打赏</span>
+              </div>
+              <div class="cash-price-wrap">
+                <p class="p-price">
+                  <span class="label">金额</span>
+                  <input type="text" name="money" class="money">
+                  <span class="pay-btn">立即支付</span>
+                </p>
+              </div>
+              <div class="cash-rank-box">
+                <div class="cash-rank-title">
+                  <span class="title-left">共<i class="num" id="userNum">0</i>人参与</span>
+                  <span class="title-right">累计金额<i class="num" id="totalSum">￥0</i></span>
+                </div>
+              </div>
+              <div id="cash-rank-content"></div>
+            </div>
+            
     	</div>
     	<div class="vote-btn-file vote-btn-div">
-    		<i class="iconfont-img">&#xe678;</i>
-    		<span class="float-right-text">文档</span>
+            <div class="btn-file">
+        		<i class="iconfont-img">&#xe678;</i>
+        		<span class="float-right-text">文档</span>
+            </div>
+            <div class="docs-show-box index-display">
+                <span class="closeicon">
+                    <i class="iconfont-close-file">&#xe617;</i>
+                </span>
+            </div>
     	</div>
     	
     </div>
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <!--  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+   <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="layer_mobile/layer.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript">
@@ -211,8 +339,6 @@
         		'</li>';
         		$(".comment-box").append(li);
         })
-         // 投票modal
-         $('#vote-btn-vote').modal()
     </script>
 </body>
 </html>
