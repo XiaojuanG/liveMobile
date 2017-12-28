@@ -1,4 +1,5 @@
 $(function () {
+	// 按钮滑动
 	// $("#switch").change(function() {
 	//     if ($("input[type='checkbox']").is(':checked') == true) {
 	       
@@ -6,14 +7,24 @@ $(function () {
 	        
 	//     }
 	// });
-	// $("#tab-box .tab-ol .tab-li").click(function() {
-	// 	now = $(this).index();
-	// 	tab();
-	// });
-	// function tab() {
-	// 	$("#tab-box .tab-ol .tab-li").eq(now).addClass('active').siblings().removeClass('active');
-	// 	$("#tab-box .tab-ul .tab-li").eq(now).addClass('cur').siblings().removeClass('cur');
-	// }
+	$(".WX_content .WX_navbar .navbar-item").click(function() {
+		console.log($(this).index());
+	    now = $(this).index();
+	    tab();
+	    if (now == 0) {
+	    	$('.layim-panel').css({
+	    		display: 'block',
+	    	});
+	    }else{
+	    	$('.layim-panel').css({
+	    		display: 'none',
+	    	});
+	    }
+	});
+	function tab() {
+		$(".WX_content .WX_navbar .navbar-item").eq(now).addClass('navbar-item_on').siblings().removeClass('navbar-item_on');
+		$(".WX_content .page_wrap .page").eq(now).addClass('page_on').siblings().removeClass('page_on');
+	}
 	
 	// 点击隐藏悬浮和显示悬浮
 	  $('.iconfont-add-img').click(function() {

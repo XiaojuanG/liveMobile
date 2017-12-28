@@ -6,6 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/tab.css">
 	<link rel="stylesheet" type="text/css" href="css/btn_siwper.css">
+  <link rel="stylesheet" href="layim/src/css/layui.mobile.css">
+  <style type="text/css">
+    body .layim-title{display: none;}
+    body .layim-chat-main, body .layui-layim{top: 0}
+    body .layim-panel{position: fixed;top: 495px;}
+    body .layim-panel .layim-content{top: 495px;}
+    body .layim-chat-main{top: 495px;background-color: #fff;}
+  </style>
 
 	<script type="text/javascript">
 		(function () {
@@ -73,16 +81,7 @@
                 </div>
                 <div class="page_wrap">
                     <div class="page page_on">
-                        <div class="" >
-                        	<ul class="comment-box" >
-                        		
-                    
-                        		<li class="comment">
-                        			暂无更多
-                        		</li>
-                        		
-                        	</ul>
-                        </div>
+                      <div class="common-norank" id="layim-div"></div>
                     </div>
                     <div class="page">
                        <div class="tab-box-li">ceshiceshi</div>
@@ -95,20 +94,7 @@
                     </div>
                 </div>
     </div>
-    <div class="publish-box index-display">
-    	<div id="publish-wrap">
-    		<span class="mobile-emotion-span">
-    			<i class="iconfont-emotion">&#xe600;</i>
-    		</span>
-
-    		
-    		<div class="input-text-wrap">
-    			<input type="" name="" id="input-content" class="input-text">
-    		</div>
-    		<span class="publish-btn" onclick="testarr()">发送</span>
-    	</div>
-    	<div class="model"></div>
-    </div>
+    
 
     <!-- float-right -->
     <div class="btn-float-right btn-float-right-hidden" id="btn-float-right">
@@ -125,7 +111,7 @@
         		<span class="float-right-text">投票</span>
             </div>
             <!-- 文字投票 -->
-            <div id="vote-wrap-text" class="mb-vote-wrap index-display">
+            <div id="vote-wrap-text" class="mb-vote-wrap index-display vote-text-hidden">
                 <div class="vote-box-close">
                     <i class="btn-close-vote">&#xe69a;</i>
                 </div>
@@ -224,7 +210,7 @@
             
             <div class="reward-wrap index-display " id="reward-wrap">
               <div id="reward-pay-close">
-                <i class="reward-icon closeicon">&#xe69a;</i>
+                <i class="reward-icon closeicon-reward">&#xe69a;</i>
               </div>
               
               <div class="cash-banner">
@@ -264,7 +250,118 @@
    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="layer_mobile/layer.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript">
+    <script src="layim/src/layui.js"></script>
+    <script>
+    layui.config({
+      version: true
+    }).use('mobile', function(){
+      var mobile = layui.mobile
+      ,layim = mobile.layim
+      ,layer = mobile.layer;
+      
+      //演示自动回复
+      var autoReplay = [
+        '您好，我现在有事不在，一会再和您联系。', 
+        '你没发错吧？face[微笑] ',
+        '洗澡中，请勿打扰，偷窥请购票，个体四十，团体八折，订票电话：一般人我不告诉他！face[哈哈] ',
+        '你好，我是主人的美女秘书，有什么事就跟我说吧，等他回来我会转告他的。face[心] face[心] face[心] ',
+        'face[威武] face[威武] face[威武] face[威武] ',
+        '<（@￣︶￣@）>',
+        '你要和我说话？你真的要和我说话？你确定自己想说吗？你一定非说不可吗？那你说吧，这是自动回复。',
+        'face[黑线]  你慢慢说，别急……',
+        '(*^__^*) face[嘻嘻] ，是贤心吗？'
+      ];
+      
+      layim.config({
+        
+        
+       init: {
+          //我的信息
+          mine: {
+            "username": "纸飞机" //我的昵称
+            ,"id": 123 //我的ID
+            ,"avatar": "http://tvax1.sinaimg.cn/crop.0.0.300.300.180/006Iv8Wjly8ff7ghbigcij308c08ct8i.jpg" //我的头像
+            ,"sign": "懒得签名"
+          }
+          ,
+        }
+
+      });
+      
+      //创建一个会话
+      
+      layim.chat({
+        id: 111111
+        ,name: '许闲心'
+        ,type: 'group' //friend、group等字符，如果是group，则创建的是群聊
+        ,avatar: 'http://tp1.sinaimg.cn/1571889140/180/40030060651/1'
+      });
+      
+      
+      
+      //查看聊天信息
+      layim.on('detail', function(data){
+        //console.log(data); //获取当前会话对象
+        layim.panel({
+          title: data.name + ' 聊天信息' //标题
+          ,tpl: '<div style="padding: 10px;">自定义模版，<a href="http://www.layui.com/doc/modules/layim_mobile.html#ondetail" target="_blank">参考文档</a></div>' //模版
+          ,data: { //数据
+            test: '么么哒'
+          }
+        });
+      });
+      
+      
+
+      
+     
+      //监听发送消息
+      layim.on('sendMessage', function(data){
+        var To = data.to;
+        //console.log(data);
+
+        //演示自动回复
+        setTimeout(function(){
+          var obj = {};
+          if(To.type === 'group'){
+            obj = {
+              username: '模拟群员'+(Math.random()*100|0)
+              ,avatar: layui.cache.dir + 'images/face/'+ (Math.random()*72|0) + '.gif'
+              ,id: To.id
+              ,type: 'group'
+              ,content: autoReplay[Math.random()*9|0]
+            }
+          } else {
+            obj = {
+              username: To.name
+              ,avatar: To.avatar
+              ,id: To.id
+              ,type: To.type
+              ,content: autoReplay[Math.random()*9|0]
+            }
+          }
+          layim.getMessage(obj);
+        }, 3000);
+      });
+      
+      //监听查看更多记录
+      layim.on('chatlog', function(data, ul){
+        console.log(data);
+        layim.panel({
+          title: '与 '+ data.name +' 的聊天记录' //标题
+          ,tpl: '<div style="padding: 10px;">这里是模版，{{d.data.test}}</div>' //模版
+          ,data: { //数据
+            test: 'Hello'
+          }
+        });
+      });
+      
+      //模拟"更多"有新动态
+      layim.showNew('More', true);
+      layim.showNew('find', true);
+    });
+    </script>
+    <!-- <script type="text/javascript">
     	var oNav = document.querySelector('.WX_content .WX_navbar').querySelectorAll('div');
         var oPage = document.querySelector('.WX_content').querySelectorAll('.page');
         var length = oPage.length;
@@ -324,21 +421,6 @@
             oNav[k].setAttribute('class','navbar-item navbar-item_on');
             oPage[k].setAttribute('class','page page_on');
         }
-
-
-        var result = [{"head_img":"images/head1.jpg","user":"wangjiang","texts":"hjdsfhjk","textdate":"2017-12-14 2:05"},{"head_img":"images/head1.jpg","user":"wangshi","texts":"hjdsfhjk","text":"\u738b\u664b\u662f\u8001\u5927","textdate":"2017-12-17 2:05"},{"head_img":"images/head1.jpg","user":"zhangsan","texts":"hjdsfhjk","text":"\u738b\u664b\u6280\u672f\u9876\u5471\u5471","textdate":"2017-12-16 2:05"}];
-       
-         $.each(result,function(index,item){
-         	var li ='<li class="comment">'+
-        			'<img src="'+item.head_img+'" class="cmt-ava">'+
-        			'<p class="cmt-info">'+
-        				'<span class="cmt-user">'+item.user+'</span>'+
-        				'<span class="cmt-time">'+item.textdate+'</span>'+
-        			'</p>'+
-        			'<div class="cmt-content">'+item.texts+'</div>'+
-        		'</li>';
-        		$(".comment-box").append(li);
-        })
-    </script>
+    </script> -->
 </body>
 </html>

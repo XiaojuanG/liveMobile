@@ -78,12 +78,6 @@ span{
 .tab-box .tab-ul .tab-li.cur{
 	display: block;
 }
-.comment{
-	list-style: none;
-	padding: .4rem 1.3rem;
-	border-bottom: 1px solid #EBECED;
-	text-align: center;
-}
 .cmt-ava{
 	float: left;
 	width: 3.5rem;
@@ -96,7 +90,7 @@ span{
     font-size: 1.2rem;
     text-align: left;
 }
-.cmt-user{
+/*.cmt-user{
 	position: absolute;
 	display: inline-block;
 	height: 2rem;
@@ -106,7 +100,7 @@ span{
 	overflow: hidden;
 	white-space: nowrap;
 	color: #111111;
-}
+}*/
 
 .cmt-time{
 	float: right;
@@ -125,8 +119,12 @@ span{
 	text-align: left;
 	word-wrap: break-word;
 }
+.common-norank{
+    width: 100%;
+    height: 660px;
+}
 /*publish-box*/
-.publish-box{
+/*.publish-box{
 	position: fixed;
 	z-index: 100;
 	bottom: 0;
@@ -140,7 +138,7 @@ span{
 	padding-right: 7.8rem;
 	border-top: 1px solid #b9b9b8;
     border-bottom: 1px solid #b9b9b8;
-}
+}*/
 .mobile-emotion-span{
 	display: inline-block;
     position: absolute;
@@ -208,15 +206,16 @@ span{
 	height: 5.5rem;
 	position: absolute;
 	right: 1rem;
-	bottom: 6rem;
+	bottom: 8rem;
+    z-index: 99999999;
 }
 #float-right{
 	width: 5.5rem;
 	height: auto;
 	position: absolute;
 	right: 0;
-	bottom: 12rem;
-
+	bottom: 14rem;
+    z-index: 99999999;
 }
 .vote-btn-div{
 	position: relative;
@@ -555,7 +554,7 @@ span{
     font-style: normal;
     font-size: 1.6rem;
 	} 
-.closeicon{
+.closeicon-reward{
 	position: absolute;
     z-index: 99;
     margin-top: -4.5rem;
@@ -715,6 +714,6 @@ span{
 .qr-img-div{
 	padding: 20px 0;
 }
-.index-display{
+.vote-text-hidden,.index-display{
 	display: none;
 }

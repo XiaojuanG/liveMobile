@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>LayIM 移动版</title>
+
+<link rel="stylesheet" href="dist/css/layui.mobile.css">
+<style type="text/css">
+  body .layim-title{display: none;}
+  body .layim-chat-main, body .layim-content, body .layui-layim{top: 0}
+</style>
+
+</head>
+<body>
+
+<script src="dist/layui.js"></script>
+<script>
+layui.config({
+  version: true
+}).use('mobile', function(){
+  var mobile = layui.mobile
+  ,layim = mobile.layim
+  ,layer = mobile.layer;
+  
+  //演示自动回复
+  var autoReplay = [
+    '您好，我现在有事不在，一会再和您联系。', 
+    '你没发错吧？face[微笑] ',
+    '洗澡中，请勿打扰，偷窥请购票，个体四十，团体八折，订票电话：一般人我不告诉他！face[哈哈] ',
+    '你好，我是主人的美女秘书，有什么事就跟我说吧，等他回来我会转告他的。face[心] face[心] face[心] ',
+    'face[威武] face[威武] face[威武] face[威武] ',
+    '<（@￣︶￣@）>',
+    '你要和我说话？你真的要和我说话？你确定自己想说吗？你一定非说不可吗？那你说吧，这是自动回复。',
+    'face[黑线]  你慢慢说，别急……',
+    '(*^__^*) face[嘻嘻] ，是贤心吗？'
+  ];
+  
+  layim.config({
+    
+    
+   init: {
+      //我的信息
+      mine: {
+        "username": "纸飞机" //我的昵称
+        ,"id": 123 //我的ID
+        ,"avatar": "http://tvax1.sinaimg.cn/crop.0.0.300.300.180/006Iv8Wjly8ff7ghbigcij308c08ct8i.jpg" //我的头像
+        ,"sign": "懒得签名"
+      }
+      ,
+    }
+
+  });
+  
+  //创建一个会话
+  
+  layim.chat({
+    id: 111111
+    ,name: '许闲心'
+    ,type: 'group' //friend、group等字符，如果是group，则创建的是群聊
+    ,avatar: 'http://tp1.sinaimg.cn/1571889140/180/40030060651/1'
+  });
+  
+  
+  
+  //查看聊天信息
+  layim.on('detail', function(data){
+    //console.log(data); //获取当前会话对象
+    layim.panel({
+      title: data.name + ' 聊天信息' //标题
+      ,tpl: '<div style="padding: 10px;">自定义模版，<a href="http://www.layui.com/doc/modules/layim_mobile.html#ondetail" target="_blank">参考文档</a></div>' //模版
+      ,data: { //数据
+        test: '么么哒'
+      }
+    });
+  });
+  
+  
+
+  
+ 
+  //监听发送消息
+  layim.on('sendMessage', function(data){
+    var To = data.to;
+    //console.log(data);
+
+    //演示自动回复
+    setTimeout(function(){
+      var obj = {};
+      if(To.type === 'group'){
+        obj = {
+          username: '模拟群员'+(Math.random()*100|0)
+          ,avatar: layui.cache.dir + 'images/face/'+ (Math.random()*72|0) + '.gif'
+          ,id: To.id
+          ,type: 'group'
+          ,content: autoReplay[Math.random()*9|0]
+        }
+      } else {
+        obj = {
+          username: To.name
+          ,avatar: To.avatar
+          ,id: To.id
+          ,type: To.type
+          ,content: autoReplay[Math.random()*9|0]
+        }
+      }
+      layim.getMessage(obj);
+    }, 3000);
+  });
+  
+  //监听查看更多记录
+  layim.on('chatlog', function(data, ul){
+    console.log(data);
+    layim.panel({
+      title: '与 '+ data.name +' 的聊天记录' //标题
+      ,tpl: '<div style="padding: 10px;">这里是模版，{{d.data.test}}</div>' //模版
+      ,data: { //数据
+        test: 'Hello'
+      }
+    });
+  });
+  
+  //模拟"更多"有新动态
+  layim.showNew('More', true);
+  layim.showNew('find', true);
+});
+</script>
+</body>
+</html>
