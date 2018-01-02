@@ -8,7 +8,6 @@ $(function () {
 	//     }
 	// });
 	$(".WX_content .WX_navbar .navbar-item").click(function() {
-		console.log($(this).index());
 	    now = $(this).index();
 	    tab();
 	    if (now == 0) {
@@ -39,11 +38,7 @@ $(function () {
         }
        
     });	
-	//对话窗口隐藏显示
-	//console.log($('.WX_navbar').find('div:first-child'));
-	// if ($('.WX_navbar').find('div:first-child').is('.navbar-item_on')) {
-	// 	 $('.publish-box ').removeClass('index-display')
-	// }
+	
 	
 	//表情
     $('.iconfont-emotion').on("click", function(){
@@ -53,11 +48,7 @@ $(function () {
 	$('.publish-btn').on('click', function() {
 		$('.model').removeClass('model-css')
 	});
-	// 投票
-	// $('.vote-btn-vote').on('click', function() {
-	// 	alert(123);
-		
-	// });
+
 	//文档
 	$('.btn-file').on('click', function() {
 		$('.docs-show-box').removeClass('index-display');

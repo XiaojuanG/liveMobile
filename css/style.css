@@ -73,7 +73,7 @@ span{
 /*tab*/
 .tab-box-li{
 	padding: 1.3rem 1rem;
-	font-size: 1.4rem;
+	font-size: 2rem;
 }
 .tab-box .tab-ul .tab-li.cur{
 	display: block;
@@ -281,11 +281,11 @@ span{
 }
 /*文档*/
 .docs-show-box{
-	height: 50rem;
-	width: 42rem;
+	height: 61rem;
+	width: 56rem;
 	position: absolute;
-	top: -34rem;
-	left:-36rem;
+	top: -42rem;
+	left:-50rem;
 	background-color: #f8f8f8;
 }
 .closeicon{
@@ -314,11 +314,11 @@ span{
 }
 /*投票*/
 .mb-vote-wrap{
-	height: 50rem;
-	width: 42rem;
+	height: 60rem;
+	width: 56rem;
 	position: absolute;
-    top: -24rem;
-	left:-36rem;
+    top: -32rem;
+	left:-50rem;
     z-index: 2;
     background-color: #fff;
 }
@@ -527,11 +527,11 @@ span{
 }
 /*打赏*/
 .reward-wrap{
-	height: 50rem;
-	width: 42rem;
+	height: 58rem;
+	width: 56rem;
     position: absolute;
-    left: -36rem;
-    top: -30rem;
+    left: -50rem;
+    top: -37rem;
     background-color: #fff;
 	font-size: 0;
 	padding-top: 25px;
