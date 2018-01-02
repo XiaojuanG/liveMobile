@@ -16,13 +16,13 @@
 			var videoObject = {
 				container: '#video', //容器的ID或className
 				variable: 'player',//播放函数名称
-				poster:'material/poster.jpg',//封面图片
+				poster:'material/video.jpg',//封面图片
 				//flashplayer:true,
 				video: [//视频地址列表形式
-					['http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4', 'video/mp4', '中文标清', 0],
-					['http://img.ksbbs.com/asset/Mon_1703/d0897b4e9ddd9a5.mp4', 'video/mp4', '中文高清', 0],
-					['http://img.ksbbs.com/asset/Mon_1703/eb048d7839442d0.mp4', 'video/mp4', '英文高清', 10],
-					['http://img.ksbbs.com/asset/Mon_1703/d30e02a5626c066.mp4', 'video/mp4', '英文超清', 0],
+					['http://pullhls065612c0.live.126.net/live/2c78727af402481283d882890a7a15fe/playlist.m3u8', 'video/m3u8', '中文标清', 0],
+					['http://pullhls065612c0.live.126.net/live/2c78727af402481283d882890a7a15fe/playlist.m3u8', 'video/m3u8', '中文高清', 0],
+					['http://pullhls065612c0.live.126.net/live/2c78727af402481283d882890a7a15fe/playlist.m3u8', 'video/m3u8', '英文高清', 10],
+					['http://pullhls065612c0.live.126.net/live/2c78727af402481283d882890a7a15fe/playlist.m3u8', 'video/m3u8', '英文超清', 0],
 				]
 			};
 			var player = new ckplayer(videoObject);
